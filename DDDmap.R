@@ -22,6 +22,12 @@ readExifData <- function() {
     write.csv(info, file = "gpsdata.csv")
 }
 
+writeLoescherTable <- function() {
+    ID <- seq(1,length(dat$ID),1)
+    dat$ID <- ID
+    write.csv(dat, file ="DDD.csv", row.names = F)
+}
+
 #plots map with saved shapefiles
 plotMap <- function()  {
 	#read shapefiles for NRW

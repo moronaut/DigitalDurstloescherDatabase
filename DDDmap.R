@@ -1,4 +1,4 @@
-#automatically adds geotagged durstlöschers to map. Can handle further mapping by type, damage, place if given extra table
+#automatically adds geotagged durstlÃ¶schers to map. Can handle further mapping by type, damage, place if given extra table
 #200628.3
 
 # Version 1: Added Date plotting
@@ -11,6 +11,10 @@ library(exifr)
 
 
 setwd(dir = "") #set to folder containing DDD .csv file
+
+readLoescherTable <- function() {
+    read.csv(file="./DDD.csv", sep =",", header = T)
+}
 
 #plots map with saved shapefiles
 plotMap <- function()  {

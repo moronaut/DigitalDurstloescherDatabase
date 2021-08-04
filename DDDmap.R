@@ -16,6 +16,12 @@ readLoescherTable <- function() {
     read.csv(file="./DDD.csv", sep =",", header = T)
 }
 
+readExifData <- function() {
+    files <- list.files(pattern = "*.jpg")
+    info <- read_exif(files, tags = c("GPSLongitude", "GPSLatitude"))
+    write.csv(info, file = "gpsdata.csv")
+}
+
 #plots map with saved shapefiles
 plotMap <- function()  {
 	#read shapefiles for NRW
